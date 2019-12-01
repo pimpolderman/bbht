@@ -1,6 +1,5 @@
 #!/bin/bash
-sudo apt-get -y update
-sudo apt-get -y upgrade
+sudo apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade
 
 
 sudo apt-get install -y libcurl4-openssl-dev
@@ -45,8 +44,8 @@ select choice in "${choices[@]}"; do
 					export GOPATH=$HOME/go
 					export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 					echo 'export GOROOT=/usr/local/go' >> ~/.bash_profile
-					echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile			
-					echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile	
+					echo 'export GOPATH=$HOME/go'	>> ~/.bash_profile
+					echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.bash_profile
 					source ~/.bash_profile
 					sleep 1
 					break
@@ -56,7 +55,7 @@ select choice in "${choices[@]}"; do
 					echo "Aborting installation..."
 					exit 1
 					;;
-	esac	
+	esac
 done
 fi
 
@@ -161,11 +160,11 @@ cd ~/tools/
 echo "done"
 
 echo "installing httprobe"
-go get -u github.com/tomnomnom/httprobe 
+go get -u github.com/tomnomnom/httprobe
 echo "done"
 
 echo "installing unfurl"
-go get -u github.com/tomnomnom/unfurl 
+go get -u github.com/tomnomnom/unfurl
 echo "done"
 
 echo "installing waybackurls"
